@@ -15,6 +15,7 @@ html
 body
 {
     margin: 0;
+
 }
 
 article,
@@ -1630,7 +1631,6 @@ input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
 .mui-bar-tab .mui-tab-item .mui-icon
 {
     top: 3px;
-
     width: 24px;
     height: 24px;
     padding-top: 0;
@@ -1639,10 +1639,8 @@ input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
 .mui-bar-tab .mui-tab-item .mui-icon ~ .mui-tab-label
 {
     font-size: 11px;
-
     display: block;
     overflow: hidden;
-
     text-overflow: ellipsis;
 }
 .mui-bar-tab .mui-tab-item .mui-icon:active
@@ -4145,7 +4143,7 @@ body > .mui-progressbar
     border-radius: 0;
 }
 body{
-	background-color: #FFFFFf;
+	background-color: #363636;
 }
 
 .mui-progressbar-in

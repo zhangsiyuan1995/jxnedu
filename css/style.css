@@ -19,7 +19,7 @@ a:hover{color:#3366cc;text-decoration:underline;}
 .person{
 	　　display:inline-block;
 　　zoom:1; 
-　　*display:inline; 
+　　display:inline;
 　　vertical-align:middle;
 }
 .mui-table-view-cell{
@@ -28,3 +28,7 @@ a:hover{color:#3366cc;text-decoration:underline;}
 .mui-media-body{
 	color: white;
 }
+body{
+    background-color:#363636;
+}
+
