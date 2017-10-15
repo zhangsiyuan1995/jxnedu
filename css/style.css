@@ -1,0 +1,30 @@
+*{margin:0;padding:0;}
+ul,li{list-style-type:none;}
+a{color:#333;text-decoration:none;}
+a:hover{color:#3366cc;text-decoration:underline;}
+.demopage{width:100%;margin:0 auto;}
+.demopage h2{font-size:14px;margin:20px 0;}
+/* scrollDiv */
+.scrollDiv{height:25px;/* 必要元素 */line-height:25px;border:#ccc 1px solid;overflow:hidden;/* 必要元素 */}
+.scrollDiv li{height:25px;padding-left:10px;}
+#s2,#s3{height:50px;}
+
+.logo{
+	width:45px; text-align:center; margin:0 auto;
+}
+.mui-inner-wrap{
+	　Width:100%;
+　　text-align:center;
+}
+.person{
+	　　display:inline-block;
+　　zoom:1; 
+　　*display:inline; 
+　　vertical-align:middle;
+}
+.mui-table-view-cell{
+	background-color: #363636;
+}
+.mui-media-body{
+	color: white;
+}
