@@ -2,10 +2,10 @@
 ul,li{list-style-type:none;}
 a{color:#333;text-decoration:none;}
 a:hover{color:#3366cc;text-decoration:underline;}
-.demopage{width:100%;margin:0 auto;}
+.demopage{width:100%;margin:0 auto; padding-top: 7px}
 .demopage h2{font-size:14px;margin:20px 0;}
 /* scrollDiv */
-.scrollDiv{height:25px;/* 必要元素 */line-height:25px;border:#ccc 1px solid;overflow:hidden;/* 必要元素 */}
+.scrollDiv{height:25px;/* 必要元素 */line-height:25px;overflow:hidden;/* 必要元素 */}
 .scrollDiv li{height:25px;padding-left:10px;}
 #s2,#s3{height:50px;}
 
