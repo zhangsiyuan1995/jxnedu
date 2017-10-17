@@ -4456,7 +4456,7 @@ body{
     z-index: 1;
 
     overflow: hidden;
-
+    height: 155px;
     width: 100%;
 }
 .mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active

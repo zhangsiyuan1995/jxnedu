@@ -34,4 +34,10 @@ body{
 .Nine{
 	padding-top: 5px;
 }
+p{
+    padding-top:5px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
 
