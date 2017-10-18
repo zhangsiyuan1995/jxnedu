@@ -1,179 +1,207 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title></title>
-		<script src="js/mui.js"></script>
-		<link href="css/mui.css" rel="stylesheet" />
-		<link rel='stylesheet prefetch' href='https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-		<link rel="stylesheet" href="css/style.css">
-		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	</head>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title></title>
+	<script src="js/mui.js"></script>
+	<link href="css/mui.css" rel="stylesheet" />
+	<link rel='stylesheet prefetch' href='https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+</head>
 
-	<body>
-		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
-			<!-- 菜单容器 -->
-			<div class="mui-inner-wrap ">
-				<aside class="mui-off-canvas-right">
-					<div class="mui-scroll-wrapper">
-						<div class="mui-scroll">
-							<!-- 菜单具体展示内容 -->
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell mui-media">
-									<a href="javascript:;">
-										<img class="mui-media-object mui-pull-left" src="image/person.jpg" style="height: 60px;">
-										<div class="mui-media-body" style="height: 60px; color: white;">
-											姓名：张三
-											<p class='mui-ellipsis'>佳鑫诺学员</p>
-										</div>
-									</a>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<a href="javascript:;">
-										<div class="mui-media-body">
-											个人中心
-										</div>
-									</a>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<a href="javascript:;">
-										<div class="mui-media-body">
-											我的课程
-										</div>
-									</a>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<a href="javascript:;">
-										<div class="mui-media-body">
-											课程表
+<body>
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+	<!-- 菜单容器 -->
+	<div class="mui-inner-wrap ">
+		<aside class="mui-off-canvas-right">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<!-- 菜单具体展示内容 -->
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="image/person.jpg" style="height: 60px;">
+								<div class="mui-media-body" style="height: 60px; color: white;">
+									姓名：张三
+									<p class='mui-ellipsis'>佳鑫诺学员</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<div class="mui-media-body">
+									个人中心
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<div class="mui-media-body">
+									我的课程
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<div class="mui-media-body">
+									课程表
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<div class="mui-media-body">
+									课后作业
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<div class="mui-media-body">
+									投诉与建议
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</aside>
+		<!-- 主页面容器 -->
 
-										</div>
-									</a>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<a href="javascript:;">
-										<div class="mui-media-body">
-											课后作业
+		<!-- 主页面标题 -->
+		<header class="mui-bar mui-bar-nav">
+			<img class="logo" src="image/jxnLOGO.png" style="width: 50%;padding-top: 6px;" />
+			<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-right" id="show"></a>
+		</header>
+		<div class="mui-content mui-scroll-wrapper" id="refreshContainer">
+			<div class="mui-scroll">
 
-										</div>
-									</a>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<a href="javascript:;">
-										<div class="mui-media-body">
-											投诉与建议
-										</div>
-									</a>
-								</li>
-							</ul>
+				<div class="mui-table-view">
+					<div class="mui-card-header mui-row" style="height: 30px;">
+					<div class="mui-col-xs-6" style="margin-top: -15px;">
+						<h3 class="mui-pull-right">897</h3>
+					</div>
+						<div class="mui-col-xs-6">
+                          <p class="mui-pull-left" >全省排名</p>
 						</div>
 					</div>
-				</aside>
-				<!-- 主页面标题 -->
-				<header class="mui-bar mui-bar-nav">
-					<img class="logo" src="image/jxnLOGO2.png" />
-					<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-right" id="show"></a>
-				</header>
-				<div class="mui-card">
-					<div class="ranking mui-row">
-						<h2>897</h2><p>全省排名</p>
-					</div>
-					<div class="mui-row">
-						<div class="mui-col-sm-4">
+					<div class="mui-row" style="border-top: solid 3px #efeff4;">
+						<div class="mui-col-xs-4 mui-text-center" style="border-right: solid 1px #efeff4;">
 							已做</br>
 							25
 						</div>
-						<div class="mui-col-sm-4">
+						<div class="mui-col-xs-4 mui-text-center" style="border-right: solid 1px #efeff4;">
 							错题</br>
 							12
 						</div>
-						<div class="mui-col-sm-4">
+						<div class="mui-col-xs-4 mui-text-center">
 							正确率</br>
 							41%
 						</div>
 					</div>
 				</div>
+				<div class="mui-table-view" style="padding: 5px 3px 0px 3px;">
+					<h4 style="margin: 5px 0px 2px 2px;padding: 5px 3px 0px 3px;">综合评价：</h4>
+					<p>您目前的学习情况：总体不错，建议复习可适当增加难度。</p>
+					<p>对您的复习建议为：根据您的测试结果，我们建议你在这方面，加强复习，争取考试前达到水平。</p>
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-header">
+						<h4>全真模拟</h4>
+					</div>
+					<div class="mui-card-content" style="padding-left: 10px;">
+						<h5>+公共课英语</h5>
+						<div class="test">
+						<a href="#" ></a> <p>-2018年专接本考试英语模拟一</p></a>
+						<a href="#" ></a> <p>-2018年专接本考试英语模拟一</p></a>
+						<a href="#"></a> <p>-2018年专接本考试英语模拟一</p></a>
+						</div>
+						<h5>+公共课数学</h5>
+							<div class="test">
+						<a href="#"><p>-2018年专接本考试数学模拟一</p></a>
+							<a href="#"><p>-2018年专接本考试数学模拟一</p></a>
+								<a href="#"><p>-2018年专接本考试数学模拟一</p></a>
+							</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-header" >
+						<h4>真题演练</h4>
+					</div>
+					<div class="mui-card-content" style="padding-left: 10px;">
+						<h5>+公共课英语</h5>
+						<div class="test">
+						<a href="#"><p>-2018年专接本考试英语真题摘选一</p></a>
+							<a href="#"><p>-2018年专接本考试英语真题摘选一</p></a>
+							<a href="#"><p>-2018年专接本考试英语真题摘选一</p></a>
+						</div>
+						<h5>+公共课数学</h5>
+						<div class="test">
+							<a href="#"><p>-2018年专接本考试数学真题摘选一</p></a>
+							<a href="#"><p>-2018年专接本考试数学真题摘选一</p></a>
+							<a href="#"><p>-2018年专接本考试数学真题摘选一</p></a>
+						</div>
+					</div>
+				</div>
 
+				<div style="height:50px;">
+
+				</div>
+
+				<ul class="mui-table-view mui-table-view-chevron">
+
+				</ul>
 			</div>
 		</div>
+	</div>
+</div>
+</div>
 
-		<nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item" href="#">
-				<span class="mui-tab-label ">拍题</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<span class="mui-tab-label">网络课堂</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<span class="mui-tab-label">复习规划</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<span class="mui-tab-label">考后</span>
-			</a>
-		</nav>
+<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px">
+	<a class="mui-tab-item" href="#">
+		<img src="image/photo.png" style="width: 30%"></br>
+		<span class="mui-tab-label" style="font-size: 10px">拍题</span>
+	</a>
+	<a class="mui-tab-item" href="#">
+		<img src="image/class.png" style="width: 30%"></br>
+		<span class="mui-tab-label" style="font-size: 8px">网络课堂</span>
+	</a>
+	<a class="mui-tab-item" href="#">
+		<img src="image/fuxi.png" style="width: 30%"></br>
+		<span class="mui-tab-label" style="font-size: 8px">复习规划</span>
+	</a>
+	<a class="mui-tab-item" href="#" >
+		<img src="image/buy.png" style="width: 30%"></br>
+		<span class="mui-tab-label" style="font-size: 8px">选课中心</span>
+	</a>
+</nav>
 
-	</body>
-	<script type="text/javascript">
-        //滚动插件
-        (function($) {
-            $.fn.extend({
-                Scroll: function(opt, callback) {
-                    //参数初始化
-                    if(!opt) var opt = {};
-                    var _this = this.eq(0).find("ul:first");
-                    var lineH = _this.find("li:first").height(), //获取行高
-                        line = opt.line ? parseInt(opt.line, 10) : parseInt(this.height() / lineH, 10), //每次滚动的行数，默认为一屏，即父容器高度
-                        speed = opt.speed ? parseInt(opt.speed, 10) : 500, //卷动速度，数值越大，速度越慢（毫秒）
-                        timer = opt.timer ? parseInt(opt.timer, 10) : 3000; //滚动的时间间隔（毫秒）
-                    if(line == 0) line = 1;
-                    var upHeight = 0 - line * lineH;
-                    //滚动函数
-                    scrollUp = function() {
-                        _this.animate({
-                            marginTop: upHeight
-                        }, speed, function() {
-                            for(i = 1; i <= line; i++) {
-                                _this.find("li:first").appendTo(_this);
-                            }
-                            _this.css({
-                                marginTop: 0
-                            });
-                        });
-                    }
-                    //鼠标事件绑定
-                    _this.hover(function() {
-                        clearInterval(timerID);
-                    }, function() {
-                        timerID = setInterval("scrollUp()", timer);
-                    }).mouseout();
-                }
-            });
-        })(jQuery);
+</body>
 
-        $(document).ready(function() {
-            $("#s2").Scroll({
-                line: 2,
-                speed: 500,
-                timer: 5000
-            });
-        });
-        mui.init({
-            swipeBack: false,
-        });
+<script type="text/javascript">
 
-        var offCanvasWrapper = mui("#offCanvasWrapper");
-        document.querySelector('.mui-icon-bars').addEventListener('tap', function() {
-            offCanvasWrapper.offCanvas('show');
+    $(document).ready(function() {
+        $("#s2").Scroll({
+            line: 2,
+            speed: 500,
+            timer: 5000
         });
-        mui('.mui-scroll-wrapper').scroll({
-            deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-        });
-        var gallery = mui('.mui-slider');
-        gallery.slider({
-            interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
-        });
-	</script>
+    });
+    mui.init({
+        swipeBack: false,
+    });
+
+    var offCanvasWrapper = mui("#offCanvasWrapper");
+    document.querySelector('.mui-icon-bars').addEventListener('tap', function() {
+        offCanvasWrapper.offCanvas('show');
+    });
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+    });
+
+</script>
 
 </html>

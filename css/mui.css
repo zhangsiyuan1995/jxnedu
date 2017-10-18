@@ -1964,7 +1964,7 @@ input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
     display:         flex;
 
     min-height: 44px;
-    padding: 10px 15px;
+    padding: 0px 15px;
 
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
