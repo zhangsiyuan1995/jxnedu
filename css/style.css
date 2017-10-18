@@ -42,5 +42,8 @@ p{
 .test{
 	margin-left: 20px;
 }
-
+.newsContent{
+	padding: 0 10px 0 10px;
+	border-bottom: solid 1px #efeff4;
+}
 
