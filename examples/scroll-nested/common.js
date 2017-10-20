@@ -67,14 +67,15 @@
             counterArr[counterIndex] = 0;
         }
 
-        var template = '<li class="list-item"><h3 class="msg-title">{{title}}</h3><span class="msg-fs14 msg-date">{{date}}</span></li>';
+        var template = '<li class="list-item"><h3 class="msg-title">{{title}}</h3><p>{{p}}</p><span class="msg-fs14 msg-date">{{date}}</span></li>';
 
         var html = '',
             dateStr = (new Date()).toLocaleString();
 
         for (var i = 0; i < count; i++) {
             html += exports.renderTemplate(template, {
-                title: prevTitle + '测试第【' + counterArr[counterIndex] + '】条新闻标题',
+                title: prevTitle + '新闻标题',   
+                p:prevTitle+'啦啦啦啦啦啦lalalalalalalal',
                 date: dateStr
             });
             
