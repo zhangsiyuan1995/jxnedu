@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.js"></script>
+    <link href="css/mui.css" rel="stylesheet" />
+    <link rel='stylesheet prefetch' href='https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-icon mui-icon-left-nav mui-pull-left" id="show"></a>
+</header>
+<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: 0">
+    <a class="mui-tab-item" href="#">
+        <img src="image/share.png" style="width: 30%">
+        <span class="mui-tab-label" style="font-size: 14px">分享</span>
+    </a>
+    <a class="mui-tab-item" href="#">
+        <img src="image/star.png" style="width: 30%">
+        <span class="mui-tab-label" style="font-size: 14px">收藏</span>
+    </a>
+    <a class="mui-tab-item" href="#">
+        <img src="image/nice.png" style="width: 30%">
+        <span class="mui-tab-label" style="font-size: 14px">点赞</span>
+    </a>
+</nav>
+        <div class="mui-row" style="margin-top: 50px;">
+            <div class="mui-col-sm-3" >
+                <img src="image/tri1.png" style="width:100px;">
+            </div>
+            <div class="mui-col-sm-7" style="margin-top: -20px;">
+                   <h3>新闻标题</h3>
+            </div>
+        </div>
+         <div>
+             <p style="font-size: 10px; background-color: #2fa8ec;color:white">时间：2017年10月20日  作者：佳鑫诺 <span class="mui-icon iconfont icon-guankan"></span> </p>
+         </div>
+</body>
+<script type="text/javascript">
+    var offCanvasWrapper = mui("#offCanvasWrapper");
+    document.querySelector('.mui-icon-left-nav').addEventListener('tap', function() {
+        offCanvasWrapper.offCanvas('show');
+    });
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+    });
+    var gallery = mui('.mui-slider');
+    gallery.slider({
+        interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
+    });
+</script>
+</html>

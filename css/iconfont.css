@@ -1,0 +1,14 @@
+
+@font-face {font-family: "iconfont";
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:10px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-guankan:before { content: "\e633"; }
+.icon-dianzan2:before { content: "\e600"; }
+
