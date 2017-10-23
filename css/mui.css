@@ -3603,19 +3603,15 @@ select:focus
 .mui-popover
 {
     position: absolute;
-    z-index: 999;
-
+    z-index: 1500;
     display: none;
-
     width: 280px;
-
     -webkit-transition: opacity .3s;
             transition: opacity .3s;
     -webkit-transition-property: opacity;
             transition-property: opacity;
     -webkit-transform: none;
             transform: none;
-
     opacity: 0;
     border-radius: 7px;
     background-color: #f7f7f7;
@@ -3628,9 +3624,7 @@ select:focus
     z-index: 1000;
     top: -25px;
     left: 0;
-
     overflow: hidden;
-
     width: 26px;
     height: 26px;
 }

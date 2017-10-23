@@ -67,7 +67,7 @@
             counterArr[counterIndex] = 0;
         }
 
-        var template = '<li class="list-item"><h3 class="msg-title">{{title}}</h3><p>{{p}}</p><span class="msg-fs14 msg-date">{{date}}</span></li>';
+        var template = '<li class="list-item"><h3 class="msg-title">{{title}}</h3><p>{{p}}</p></li>';
 
         var html = '',
             dateStr = (new Date()).toLocaleString();
@@ -76,7 +76,6 @@
             html += exports.renderTemplate(template, {
                 title: prevTitle + '新闻标题',   
                 p:prevTitle+'啦啦啦啦啦啦lalalalalalalal',
-                date: dateStr
             });
             
             counterArr[counterIndex]++;

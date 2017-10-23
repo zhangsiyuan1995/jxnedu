@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
 
     <head>
         <meta charset="utf-8">
@@ -8,11 +8,26 @@
         <link rel="stylesheet" href="examples/scroll-nested/libs/mui/css/mui.min.css" />
         <link rel="stylesheet" href="examples/dist/debug/minirefresh.css" />
         <link rel="stylesheet" href="examples/scroll-nested/common.css" />
+        <style>
+            .mui-popover-arrow{
+                display:none;
+            }
+            #popover {
+                height: 50px;
+                width: 100%;
+                position:fixed;
+                left:50%;
+                top: 5px;
+                right: 6px;
+            }
+        </style>
     </head>
     <body>
-    <header class="mui-bar mui-bar-nav">
-        <a class="mui-icon mui-icon-left-nav mui-pull-left" id="show" href="index.html"></a>
-    </header>
+    <nav class="mui-bar mui-bar-nav">
+        <a class="mui-icon mui-icon-left-nav mui-pull-left"  href="index.html"></a>
+        <a class="mui-icon mui-icon-search mui-pull-right" id="openPopover" href="#popover"></a>
+        <h4 class="mui-text-center" style="font-weight:normal;">新闻</h4>
+    </nav>
         <div class="content">
             <div id="minirefresh" class="minirefresh-wrap">
                 <div class="minirefresh-scroll">
@@ -77,7 +92,12 @@
                             <span class="mui-tab-label" style="font-size: 14px">接本政策</span>
                         </a>
                     </nav>
-                    <a href="News.html">
+                    <div id="popover" class="mui-popover">
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell"> <input type="search" value="search"></li>
+                        </ul>
+                    </div>
+                    <a  id="listNews" href="News.html">
                     <ul class="data-list" id="listdata">
 
                     </ul>
@@ -122,6 +142,17 @@
             slider.slider({
                 interval: 5000
             });
+            var pop = document.getElementById("pop");
+            var mask = mui.createMask(function(){
+                pop.classList.remove('mui-active');
+            });
+
+            // 显示
+            mui('#openPopover')[0].addEventListener('tap',function(){
+                mask.close();//显示遮罩
+                pop.classList.add('mui-active');
+            })
+            mask.close();//关闭遮罩
         </script>
     </body>
 
