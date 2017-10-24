@@ -458,7 +458,7 @@ html5代码块的代码可以随意更改以适合你的应用，欢迎到论坛
         },
         getVars: function(k) {
 			var o=this._A_;
-			if (typeof(o) == 'undefined') { 
+			if (typeof(o) == 'undefined') {
 				return null;
 			}
             if (k in o) {
@@ -1144,7 +1144,7 @@ html5代码块的代码可以随意更改以适合你的应用，欢迎到论坛
 		quitFullScreen:function() {
 			if(document.cancelFullScreen) {
 				document.cancelFullScreen();
-			} 
+			}
 			else if(document.mozCancelFullScreen) {
 				document.mozCancelFullScreen();
 			} else if(document.webkitCancelFullScreen) {
@@ -1434,7 +1434,7 @@ html5代码块的代码可以随意更改以适合你的应用，欢迎到论坛
 						if(k=='g' && C._A_[k]){
 							var g=parseInt(C._A_[k]);
 							C.videoSeek(g);
-						}	
+						}
 					}
 				}
 				if(!C._Y_){
@@ -1448,7 +1448,7 @@ html5代码块的代码可以随意更改以适合你的应用，欢迎到论坛
 							else{
 								C._J_=parseInt(C._O_['totalTime'])+j;
 							}
-						}	
+						}
 					}
 				}
             }

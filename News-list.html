@@ -143,16 +143,8 @@
                 interval: 5000
             });
             var pop = document.getElementById("pop");
-            var mask = mui.createMask(function(){
-                pop.classList.remove('mui-active');
-            });
+        
 
-            // 显示
-            mui('#openPopover')[0].addEventListener('tap',function(){
-                mask.close();//显示遮罩
-                pop.classList.add('mui-active');
-            })
-            mask.close();//关闭遮罩
         </script>
     </body>
 
