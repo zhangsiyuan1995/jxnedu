@@ -1899,7 +1899,7 @@ input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
     font-size: 14px;
 
     position: relative;
-
+    z-index: 10000;
     overflow: hidden;
 
     margin: 8px;
@@ -3603,7 +3603,7 @@ select:focus
 .mui-popover
 {
     position: absolute;
-    z-index: 1500;
+    z-index: 10000;
     display: none;
     width: 280px;
     -webkit-transition: opacity .3s;
@@ -3621,7 +3621,7 @@ select:focus
 .mui-popover .mui-popover-arrow
 {
     position: absolute;
-    z-index: 1000;
+    z-index: 10000;
     top: -25px;
     left: 0;
     overflow: hidden;
@@ -3730,7 +3730,7 @@ select:focus
 .mui-backdrop
 {
     position: fixed;
-    z-index: 998;
+    z-index: 10;
     top: 0;
     right: 0;
     bottom: 0;

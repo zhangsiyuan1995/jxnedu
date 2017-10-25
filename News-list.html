@@ -1,151 +1,151 @@
 <!DOCTYPE html>
 <html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="examples/scroll-nested/libs/mui/css/mui.min.css" />
-        <link rel="stylesheet" href="examples/dist/debug/minirefresh.css" />
-        <link rel="stylesheet" href="examples/scroll-nested/common.css" />
-        <style>
-            .mui-popover-arrow{
-                display:none;
-            }
-            #popover {
-                height: 50px;
-                width: 100%;
-                position:fixed;
-                left:50%;
-                top: 5px;
-                right: 6px;
-            }
-        </style>
-    </head>
-    <body>
-    <nav class="mui-bar mui-bar-nav">
-        <a class="mui-icon mui-icon-left-nav mui-pull-left"  href="index.html"></a>
-        <a class="mui-icon mui-icon-search mui-pull-right" id="openPopover" href="#popover"></a>
-        <h4 class="mui-text-center" style="font-weight:normal;">新闻</h4>
-    </nav>
-        <div class="content">
-            <div id="minirefresh" class="minirefresh-wrap">
-                <div class="minirefresh-scroll">
-                    <!-- 一个轮播示例，可以是其它的轮播  -->
-                    <div id="gallert-slider" class="mui-slider">
-                        <div class="mui-slider-group mui-slider-loop">
-                            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-                            <div class="mui-slider-item mui-slider-item-duplicate">
-                                <a href="#">
-                                    <img src="image/ad2.jpg">
-                                </a>
-                            </div>
-                            <!-- 第一张 -->
-                            <div class="mui-slider-item">
-                                <a href="#">
-                                    <img src="image/ad1.jpg">
-                                </a>
-                            </div>
-                            <!-- 第二张 -->
-                            <div class="mui-slider-item">
-                                <a href="#">
-                                    <img src="image/ad2.jpg">
-                                </a>
-                            </div>
-                            <!-- 第三张 -->
-                            <div class="mui-slider-item">
-                                <a href="#">
-                                    <img src="image/ad1.jpg">
-                                </a>
-                            </div>
-                            <!-- 第四张 -->
-                            <div class="mui-slider-item">
-                                <a href="#">
-                                    <img src="image/ad2.jpg">
-                                </a>
-                            </div>
-                            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-                            <div class="mui-slider-item mui-slider-item-duplicate">
-                                <a href="#">
-                                    <img src="image/ad1.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mui-slider-indicator">
-                            <div class="mui-indicator mui-active"></div>
-                            <div class="mui-indicator"></div>
-                            <div class="mui-indicator"></div>
-                            <div class="mui-indicator"></div>
-                        </div>
-                    </div>
-                    <nav class="mui-bar-tab" style="background-color:white;margin-bottom: -5px">
-                        <a class="mui-tab-item" href="#">
-                            <span class="mui-tab-label" style="font-size: 14px">接本政策</span>
-                        </a>
-                        <a class="mui-tab-item" href="#">
-                            <span class="mui-tab-label" style="font-size: 14px">接本政策</span>
-                        </a>
-                        <a class="mui-tab-item" href="#">
-                            <span class="mui-tab-label" style="font-size: 14px">接本政策</span>
-                        </a>
-                        <a class="mui-tab-item" href="#" >
-                            <span class="mui-tab-label" style="font-size: 14px">接本政策</span>
-                        </a>
-                    </nav>
-                    <div id="popover" class="mui-popover">
-                        <ul class="mui-table-view">
-                            <li class="mui-table-view-cell"> <input type="search" value="search"></li>
-                        </ul>
-                    </div>
-                    <a  id="listNews" href="News.html">
-                    <ul class="data-list" id="listdata">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="examples/scroll-nested/libs/mui/css/mui.min.css" />
+		<link rel="stylesheet" href="examples/dist/debug/minirefresh.css" />
+		<link rel="stylesheet" href="examples/scroll-nested/common.css" />
+		<style>
+			.mui-popover-arrow {
+				display: none;
+			}
+			
+			#popover {
+				height: 50px;
+				width: 100%;
+				position: fixed;
+				left: 50%;
+				top: 5px;
+				right: 6px;
+			}
+		</style>
+	</head>
 
-                    </ul>
-                    </a>
-                </div>
-            </div>
-        </div>
+	<body>
+		<nav class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+			<a class="mui-icon mui-icon-search mui-pull-right" id="openPopover" href="#popover"></a>
+			<h4 class="mui-text-center" style="font-weight:normal;">新闻</h4>
+		</nav>
+		<div class="content">
+			<div id="minirefresh" class="minirefresh-wrap">
+				<div class="minirefresh-scroll">
+					<!-- 一个轮播示例，可以是其它的轮播  -->
+					<div id="gallert-slider" class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+									<img src="image/ad2.jpg">
+								</a>
+							</div>
+							<!-- 第一张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="image/ad1.jpg">
+								</a>
+							</div>
+							<!-- 第二张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="image/ad2.jpg">
+								</a>
+							</div>
+							<!-- 第三张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="image/ad1.jpg">
+								</a>
+							</div>
+							<!-- 第四张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="image/ad2.jpg">
+								</a>
+							</div>
+							<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+									<img src="image/ad1.jpg">
+								</a>
+							</div>
+						</div>
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
+					</div>
+					<nav class="mui-bar-tab" style="background-color:white;margin-bottom: -5px">
+						<a class="mui-tab-item" href="#">
+							<span class="mui-tab-label" style="font-size: 14px">接本政策</span>
+						</a>
+						<a class="mui-tab-item" href="#">
+							<span class="mui-tab-label" style="font-size: 14px">接本政策</span>
+						</a>
+						<a class="mui-tab-item" href="#">
+							<span class="mui-tab-label" style="font-size: 14px">接本政策</span>
+						</a>
+						<a class="mui-tab-item" href="#">
+							<span class="mui-tab-label" style="font-size: 14px">接本政策</span>
+						</a>
+					</nav>
 
-        <script type="text/javascript" src="examples/scroll-nested/mui.min.js"></script>
-        <script type="text/javascript" src="examples/dist/debug/minirefresh.js"></script>
-        <script type="text/javascript" src="examples/scroll-nested/common.js"></script>
-        <script>
-            var appendTestData = Common.appendTestData,
-                // 记录一个最新
-                maxDataSize = 30,
-                listDom = document.querySelector('#listdata'),
-                requestDelayTime = 600;
+					<a id="listNews" href="News.html">
+						<ul class="data-list" id="listdata">
 
-            var miniRefresh = new MiniRefresh({
-                container: '#minirefresh',
-                down: {
-                    callback: function() {
-                        setTimeout(function() {
-                            // 每次下拉刷新后，上拉的状态会被自动重置
-                            appendTestData(listDom, 10, true);
-                            miniRefresh.endDownLoading(true);
-                        }, requestDelayTime);
-                    }
-                },
-                up: {
-                    isAuto: true,
-                    callback: function() {
-                        setTimeout(function() {
-                            appendTestData(listDom, 10);
-                            miniRefresh.endUpLoading(listDom.children.length >= maxDataSize ? true : false);
-                        }, requestDelayTime);
-                    }
-                }
-            });
+						</ul>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="popover" class="mui-popover">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell"> <input type="search" value="search"></li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="examples/scroll-nested/mui.min.js"></script>
+		<script type="text/javascript" src="examples/dist/debug/minirefresh.js"></script>
+		<script type="text/javascript" src="examples/scroll-nested/common.js"></script>
+		<script>
+			var appendTestData = Common.appendTestData,
+				// 记录一个最新
+				maxDataSize = 30,
+				listDom = document.querySelector('#listdata'),
+				requestDelayTime = 600;
 
-            var slider = mui("#gallert-slider");
-            slider.slider({
-                interval: 5000
-            });
-            var pop = document.getElementById("pop");
-        
+			var miniRefresh = new MiniRefresh({
+				container: '#minirefresh',
+				down: {
+					callback: function() {
+						setTimeout(function() {
+							// 每次下拉刷新后，上拉的状态会被自动重置
+							appendTestData(listDom, 10, true);
+							miniRefresh.endDownLoading(true);
+						}, requestDelayTime);
+					}
+				},
+				up: {
+					isAuto: true,
+					callback: function() {
+						setTimeout(function() {
+							appendTestData(listDom, 10);
+							miniRefresh.endUpLoading(listDom.children.length >= maxDataSize ? true : false);
+						}, requestDelayTime);
+					}
+				}
+			});
 
-        </script>
-    </body>
+			var slider = mui("#gallert-slider");
+			slider.slider({
+				interval: 5000
+			});
+			var pop = document.getElementById("pop");
+		</script>
+	</body>
 
 </html>
