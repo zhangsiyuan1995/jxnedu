@@ -95,18 +95,20 @@
     </div>
 </div>
 <nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px">
-    <button type="button" class="mui-btn mui-btn-outlined mui-btn-primary">错题解析</button>
-    <button type="button" class="mui-btn mui-btn-outlined mui-btn-primary">继续练习</button>
+    <button type="button" class="mui-btn mui-btn-outlined mui-btn-primary" onclick="openpage()">错题解析</button>
+    <button type="button" class="mui-btn mui-btn-outlined mui-btn-primary" onclick="openpage2()">继续练习</button>
 </nav>
 </body>
 <script type="text/javascript" charset="utf-8">
     mui.init({
         swipeBack: false,
     });
-    var offCanvasWrapper = mui("#offCanvasWrapper");
-    document.querySelector('.mui-icon-bars').addEventListener('tap', function() {
-        offCanvasWrapper.offCanvas('show');
-    });
+  
+
+    function openpage(){
+        window.location.replace("analysis.html");}
+    function openpage2(){
+        window.location.replace("Test-list.html");}
 </script>
 <style>
     .result{

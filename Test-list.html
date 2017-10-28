@@ -175,7 +175,7 @@
 		<div id="popover" class="mui-popover">
 			<div class="mui-card">
 				<div class="mui-card-content mui-text-center"  id="subject" >
-					<h3>18专接本 临床摸底测试</h3>
+					<h3>18专接本 公共英语测试</h3>
 					<h6>共44个题，参考用时：90分钟</h6>
 				</div>
 				<div class="mui-row">
@@ -188,7 +188,7 @@
 						<h5 class="mui-text-center">平均正答率</h5>
 					</div>
 				</div>
-				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">开始做题</button>
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="openpage()";>开始做题</button>
 			</div>
 		</div>
 
@@ -236,6 +236,7 @@
 		#subject{
 			background-color: rgb(52,149,233) ;color:#FFFFFF;
 			padding-bottom: 20px;
+			padding-top: 20px;
 			-moz-border-radius-topleft:5px;
 			-moz-border-radius-topright:5px;
 		}
@@ -248,6 +249,7 @@
 		}
 		.mui-card{
 			margin:0 0 0 0;
+			padding-bottom: 20px;
 		}
 		.mui-col-xs-6{
 
@@ -271,6 +273,9 @@
 		mui('.mui-scroll-wrapper').scroll({
 			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 		});
+		function openpage(){
+window.location.replace("Test.html");
+}
 	</script>
 
 </html>

@@ -68,7 +68,6 @@
 		<nav class="mui-bar mui-bar-nav">
 			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
 			<a class="mui-icon mui-icon-loop mui-pull-right"></a>
-			<h4 class="mui-text-center" style="font-weight:normal;">做题</h4>
 		</nav>
 		<div class="content">
 			<div class="nav-control">
@@ -83,8 +82,7 @@
 				<p list-type="8">8</p>
 				<p list-type="9">9</p>
 				<p list-type="10">10</p>
-				<p list-type="11">11</p>
-				<p list-type="12">12</p>
+
 
 			</div>
 			<div class="swiper-container">
@@ -211,6 +209,17 @@
 
 					</div>
 					</div>
+					<div class="swiper-slide">
+						<div class="minirefresh-wrap">
+							<div class="minirefresh-scroll">
+
+								<button style="text-align: center;" type="button" class="mui-btn mui-btn-outlined" onclick="openpage()"><h4 style="color:#69c6ff; color: #000000">提交试卷</h4></button>
+
+							</div>
+						</div>	<div style="height: 100px">
+
+					</div>
+					</div>
 				</div>
 
 			</div>
@@ -242,6 +251,8 @@
 					currIndex = index;
 				}
 			});
+            function openpage(){
+                window.location.replace("result.html");}
 
 		</script>
 	</body>
