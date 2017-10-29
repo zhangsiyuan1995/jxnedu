@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.js"></script>
+    <link href="css/mui.css" rel="stylesheet" />
+    <link rel='stylesheet prefetch' href='https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+<nav class="mui-bar mui-bar-nav">
+    <a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+
+</nav>
+<div class="advertisement" style="margin-top: 45px;">
+    <img src="image/ad2.jpg">
+</div>
+
+<div class="mui-card" style="padding: 10px 0 10px 0;  box-shadow: 0px 1px 1px #888888;">
+    <div class="mui-row" style="width:375px">
+        <div class="mui-col-xs-1">
+            <img src="image/bt1.png"  style="margin-right:4px;margin-left: 19px;width:3px;height: 25px; padding-top: 12px;">
+        </div>
+        <div class="mui-col-xs-8">
+            <h4 class="bulue mui-pull-left" >18暑假计算机二班</h4>
+        </div>
+        <div class="mui-xs-3">
+         <img src="image/NEW1.png" style="width:10%" id="new">
+        </div>
+    </div>
+    <div class="mui-row" style="text-align: center">
+        <div class="mui-col-xs-6">
+            <h6>第一天：授课内容标题</h6>
+        </div>
+        <div class="mui-col-xs-4">
+            <h6>教师：陈欢</h6>
+        </div>
+    </div>
+    <div class="mui-card-content">
+        <div class="mui-row" style="width:375px;padding-top: 15px">
+            <div class="mui-col-xs-1" style="width: 15px">
+                <img src="image/bt1.png"  style="margin-left: 10px;width:3px;height: 20px; padding-top: 12px;">
+            </div>
+            <div class="mui-col-xs-8">
+                <h5 class="bulue mui-pull-left" >课前预习</h5>
+            </div>
+        </div>
+        <div class="content">
+            <p>预习内容预习内容预习内容预习内容预习内容预习内容预习内容预习内容预习内容预习内容预习内容</p>
+        </div>
+
+
+        <div class="mui-row" style="width:375px;padding-top: 15px">
+            <div class="mui-col-xs-1" style="width: 15px">
+                <img src="image/bt1.png"  style="margin-left: 10px;width:3px;height: 20px; padding-top: 12px;">
+            </div>
+            <div class="mui-col-xs-8">
+                <h5 class="bulue mui-pull-left" >教学内容</h5>
+            </div>
+        </div>
+        <div class="content">
+            <p>教学内容教学内容教学内容教学内容教学内容教学内容教学内容教学内容</p>
+        </div>
+    </div>
+    <div class="bttn">
+    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">课程详情</button>
+    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">课后作业</button>
+    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">我要评分</button>
+</div>
+</div>
+<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px;z-index: 15000">
+    <a class="mui-tab-item" href="#">
+        <img src="image/photo.png" style="width: 30%"></br>
+        <span class="mui-tab-label" style="font-size: 10px">拍题</span>
+    </a>
+    <a class="mui-tab-item" href="#">
+        <img src="image/class.png" style="width: 30%"></br>
+        <span class="mui-tab-label" style="font-size: 8px">网络课堂</span>
+    </a>
+    <a class="mui-tab-item" href="#">
+        <img src="image/fuxi.png" style="width: 30%"></br>
+        <span class="mui-tab-label" style="font-size: 8px">复习规划</span>
+    </a>
+    <a class="mui-tab-item" href="#">
+        <img src="image/buy.png" style="width: 30%"></br>
+        <span class="mui-tab-label" style="font-size: 8px">选课中心</span>
+    </a>
+</nav>
+
+</body>
+<style>
+    .bttn{
+        margin-top: 20px;
+        text-align: right;
+    }
+    #new{
+        position:absolute;
+        right: 16px;
+        top: -10px;
+    }
+    .mui-card-content{
+        margin: 0 20px 0 20px;
+        border-top:1px #efeff4 solid;
+    }
+    h6{
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    .mui-row{
+        position:relative;
+    }
+    .content{
+        padding: 0px 15px 0 15px;
+    }
+</style>
+
+<script type="text/javascript">
+
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+    });
+    var gallery = mui('.mui-slider');
+    gallery.slider({
+        interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
+    });
+</script>
+
+</html>
