@@ -19,39 +19,55 @@
 
 		<div class="mui-content mui-scroll-wrapper" id="refreshContainer">
 			<div class="mui-scroll">
-
 				<div class="mui-table-view">
-					<div class="mui-card-header mui-row" style="height: 30px;">
-						<div class="mui-col-xs-6" style="margin-top: -15px;">
-							<h3 class="mui-pull-right">897</h3>
-						</div>
-						<div class="mui-col-xs-6">
-							<p class="mui-pull-left">全省排名</p>
+					<div class="mui-row" style="height: 170px; padding-top: 5px">
+						<h5 style="color: #0085d0">您的全省排名</h5>
+						<div class="mui-row" id="top">
+							<div class="mui-col-xs-4">
+								<h6 class="rank">您是英语专业</h6>
+							</div>
+							<div class="mui-col-xs-4" style="background-image:url(image/yuan.png);background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;height: 120px">
+								<div style="margin-top: 40px;color: #FFFFFF ;text-align: center">
+									<h1 style="display: inline">123</h1>
+								</div>
+							</div>
+							<div class="mui-col-xs-4">
+								<h6 class="rank">已超越4013名考生</h6>
+							</div>
 						</div>
 					</div>
-					<div class="mui-row" style="border-top: solid 3px #efeff4;">
-						<div class="mui-col-xs-4 mui-text-center" style="border-right: solid 1px #efeff4;">
+					<div class="mui-row" style="border: solid 3px #efeff4;">
+						<div class="mui-col-xs-4 mui-text-center" style="border-right: solid 3px #efeff4;background-color: #0085d0;">
 							已做</br>
 							25
 						</div>
-						<div class="mui-col-xs-4 mui-text-center" style="border-right: solid 1px #efeff4;">
+						<div class="mui-col-xs-4 mui-text-center" style="border-right: solid 3px #efeff4;background-color: #0085d0;">
 							错题</br>
 							12
 						</div>
-						<div class="mui-col-xs-4 mui-text-center">
+						<div class="mui-col-xs-4 mui-text-center" style="background-color: #0085d0;">
 							正确率</br>
 							41%
 						</div>
 					</div>
 				</div>
 				<div class="mui-table-view" style="padding: 5px 3px 0px 3px;">
-					<h4 style="margin: 5px 0px 2px 2px;padding: 5px 3px 0px 3px;">综合评价：</h4>
+					<h4 class="bulue" style="margin: 5px 5px 2px 5px;padding: 5px 3px 0px 5px;">综合评价：</h4>
 					<p>您目前的学习情况：总体不错，建议复习可适当增加难度。</p>
 					<p>对您的复习建议为：根据您的测试结果，我们建议你在这方面，加强复习，争取考试前达到水平。</p>
 				</div>
 				<div class="mui-card">
 					<div class="mui-card-header">
-						<h4>全真模拟</h4>
+						<div class="mui-row">
+							<div class="mui-col-xs-2">
+								<img src="image/bt1.png"  style="margin-right:8px;margin-left: 8px;width:4px; height:29px;padding-top: 8px;">
+							</div>
+							<div class="mui-col-xs-10">
+								<h4 class="bulue mui-pull-left" >全真模拟</h4>
+							</div>
+						</div>
+
+
 					</div>
 					<ul class="mui-table-view">
 						<li class="mui-table-view-cell mui-collapse">
@@ -107,9 +123,19 @@
 						</li>
 					</ul>
 				</div>
+
 				<div class="mui-card">
 					<div class="mui-card-header">
-						<h4>真题演练</h4>
+						<div class="mui-row">
+							<div class="mui-col-xs-2">
+								<img src="image/bt1.png"  style="margin-right:8px;margin-left: 8px;width:4px; height:29px;padding-top: 8px;">
+							</div>
+							<div class="mui-col-xs-10">
+								<h4 class="bulue mui-pull-left" >真题演练</h4>
+							</div>
+						</div>
+
+
 					</div>
 					<ul class="mui-table-view">
 						<li class="mui-table-view-cell mui-collapse">
@@ -174,7 +200,7 @@
 		</div>
 		<div id="popover" class="mui-popover">
 			<div class="mui-card">
-				<div class="mui-card-content mui-text-center"  id="subject" >
+				<div class="mui-card-content mui-text-center" id="subject">
 					<h3>18专接本 公共英语测试</h3>
 					<h6>共44个题，参考用时：90分钟</h6>
 				</div>
@@ -188,10 +214,9 @@
 						<h5 class="mui-text-center">平均正答率</h5>
 					</div>
 				</div>
-				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="openpage()";>开始做题</button>
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="openpage()" ;>开始做题</button>
 			</div>
 		</div>
-
 
 		<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px">
 			<a class="mui-tab-item" href="#">
@@ -214,50 +239,78 @@
 
 	</body>
 	<style>
+		.bulue{
+			color: #0085d0;
+		}
+		.rank{
+			text-align:center;
+			padding-top: 50px;
+			color: #0085d0;
+		}
+		#top{
+			padding-bottom: 10px;
+		}
 		.mui-popover-arrow {
 			display: none;
 		}
-
+		
 		#popover {
 			height: 40%;
-			width:80%;
+			width: 80%;
 			position: fixed;
 			left: 50%;
 			top: 50%;
-			margin:0 15% 0 8%;
+			margin: 0 15% 0 8%;
 			background-color: #FFFFFF;
 		}
-		h4,h5{
+
+		h5 {
 			text-align: center;
 		}
-		h4{
-			font-weight:bold;
+		h4 {
+			font-weight: normal;
 		}
-		#subject{
-			background-color: rgb(52,149,233) ;color:#FFFFFF;
+		h1{
+			text-align: center;
+		}
+		#subject {
+			background-color: rgb(52, 149, 233);
+			color: #FFFFFF;
 			padding-bottom: 20px;
 			padding-top: 20px;
-			-moz-border-radius-topleft:5px;
-			-moz-border-radius-topright:5px;
+			-moz-border-radius-topleft: 5px;
+			-moz-border-radius-topright: 5px;
 		}
-		h3{
+		
+		h3 {
 			padding-bottom: 20px;
-            margin-top: 30px;
+			margin-top: 30px;
 			padding-top: 20px;
 			border: none;
-
 		}
-		.mui-card{
-			margin:0 0 0 0;
-			padding-bottom: 20px;
+		
+		.mui-card {
+			margin: 0 0 0 0;
+			padding-bottom: 5px;
+			border-top: solid 5px #efeff4;
 		}
-		.mui-col-xs-6{
-
+		
+		.mui-col-xs-6 {
 			margin-top: 10px;
+		}
+		
+		button {
+			margin: 10% 10% 10% 15%;
+			width: 70%;
+		}
+		.font{
+			padding-top: 50px;
+			color: #000000;
 
 		}
-		button{
-			margin:10% 10% 10% 15%;width:70%;
+		.mui-row{
+			color: #FFFFFF;
+
 		}
 	</style>
 
@@ -273,9 +326,10 @@
 		mui('.mui-scroll-wrapper').scroll({
 			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 		});
-		function openpage(){
-window.location.replace("Test.html");
-}
+
+		function openpage() {
+			window.location.replace("Test.html");
+		}
 	</script>
 
 </html>
