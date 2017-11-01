@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/mui.js"></script>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel='stylesheet prefetch' href='https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	</head>
+
+	<body>
+		<nav class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+			<a class="mui-icon mui-icon-loop mui-pull-right"></a>
+			<h4 class="mui-text-center" style="font-weight:normal;">拍题</h4>
+		</nav>
+		<div>
+			<div class="photoPng">
+				<img src="image/photoPng.png">
+			</div>
+			<div class="H6">
+				<h6>不会的题拍下来</h6>
+				<h6>老师为你解答</h6>
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="#">
+				<span class="mui-tab-label mui-button">拍题</span>
+			</a>
+			<a class="mui-tab-item" href="#">
+				<span class="mui-tab-label">网络课堂</span>
+			</a>
+			<a class="mui-tab-item" href="#">
+				<span class="mui-tab-label">复习规划</span>
+			</a>
+			<a class="mui-tab-item" href="#">
+				<span class="mui-tab-label">考后</span>
+			</a>
+		</nav>
+
+	</body>
+
+	<script type="text/javascript" charset="utf-8">
+		mui.init({
+			swipeBack: false,
+		});
+		
+	</script>
+	<style>
+		body {
+			position: relative;
+		}
+		
+		.photoPng {
+			position: absolute;
+			right: 50%;
+			top: 200px;
+			width: 35%;
+		}
+		
+		img {
+			width: 200%;
+		}
+		
+		.H6 {
+			text-align: center;
+			position: absolute;
+			top: 450px;
+			right: 40%;
+		}
+	</style>
+
+</html>

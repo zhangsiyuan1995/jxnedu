@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="swipe/css/swiper.min.css" />
+		<link rel="stylesheet" href="swipe/css/minirefresh.css" />
+		<link rel="stylesheet" href="swipe/css/common.css" />
+        <link rel="stylesheet" href="swipe/css/mui.min.css" />
+		<style>
+			.navbar-header {
+				border-bottom: none;
+			}
+			.swiper-container {
+				position: absolute;
+				top: 25px;
+				width: 100%;
+				height: 100%;
+				word-break:break-all;
+
+			}
+			.minirefresh-scroll{
+                 padding: 10px 10px 10px 10px;
+				border-bottom: solid 1px #efeff4;
+				height: 100%;
+			}
+			.minirefresh-wrap {
+				padding-top: -60px
+			}
+			body{
+				background-color: #efeff4;
+			}
+			.nav-control{
+				margin-bottom: -5px;
+				padding-bottom: -10px;
+				height: 30px;
+			}
+			p{
+				margin-bottom: 0;
+				color:#000000;
+			}
+			button{
+				margin:10% 10% 10% 10%;
+				width:80%;
+				height: 60px;
+				text-align: left;
+				display: inline;
+			}
+			.rubric{
+				color:#69c6ff;
+			}
+			button>h5{
+				border-right: solid 1px #efeff4;
+				width: 20px;
+				padding-right: 10px;
+				margin-right: 10px;
+			}
+			h5,p{
+				display: inline;
+
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+			<a class="mui-icon mui-icon-loop mui-pull-right"></a>
+		</nav>
+		<div class="content">
+			<div class="nav-control">
+				<p class="active" list-type="0">1</p>
+				<p list-type="1">2</p>
+				<p list-type="2">3</p>
+				<p list-type="3">4</p>
+			</div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div id="minirefresh0" class="minirefresh-wrap">
+							<div class="minirefresh-scroll">
+								<h5 class="rubric">题目:</h5></br>
+								<p>第一题：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+								<a href="#minirefresh1"><button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">A</h5><P>答案答案答案</P></button></a>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">B</h5><P>答案答案答案</P></button>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">C</h5><P>答案答案答案</P></button>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">D</h5><P>答案答案答案</P></button>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div id="minirefresh1" class="minirefresh-wrap">
+							<div class="minirefresh-scroll">
+								<h5 class="rubric">题目:</h5></br>
+								<p>第一题：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">A</h5><P>答案答案答案</P></button>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">B</h5><P>答案答案答案</P></button>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">C</h5><P>答案答案答案</P></button>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">D</h5><P>答案答案答案</P></button>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="minirefresh-wrap">
+							<div class="minirefresh-scroll">
+								<h5 class="rubric">题目:</h5></br>
+								<p>第一题：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">A</h5><P>答案答案答案</P></button>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">B</h5><P>答案答案答案</P></button>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">C</h5><P>答案答案答案</P></button>
+								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">D</h5><P>答案答案答案</P>/button>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper-slide">
+						<div class="minirefresh-wrap">
+							<div class="minirefresh-scroll">
+
+								<button style="text-align: center;" type="button" class="mui-btn mui-btn-outlined" onclick="openpage()"><h4 style="color:#0085d0; color: #000000">提交试卷</h4></button>
+
+							</div>
+						</div>	<div style="height: 100px">
+
+					</div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<script type="text/javascript" src="swipe/js/swiper.min.js"></script>
+		<script type="text/javascript" src="swipe/js/minirefresh.js"></script>
+		<script type="text/javascript" src="swipe/js/common.js"></script>
+		<script>
+			var appendTestData = Common.appendTestData,
+				bindEvent = Common.bindEvent,
+				// 记录一个最新
+				maxDataSize = 30,
+				listDomArr = [],
+				requestDelayTime = 600,
+				miniRefreshArr = [],
+				currIndex = 0;
+
+			var navControl = document.querySelector('.nav-control');
+
+			var mySwiper = new Swiper('.swiper-container', {
+				autoplay: 0,
+				onSlideChangeEnd: function(swiper) {
+					var index = swiper.activeIndex;
+					navControl.querySelector('.active').classList.remove('active');
+					navControl.children[index].classList.add('active');
+					currIndex = index;
+				}
+			});
+            function openpage(){
+                window.location.replace("result.html");}
+		</script>
+	</body>
+
+</html>

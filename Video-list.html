@@ -15,7 +15,7 @@
 	<body>
 		<nav class="mui-bar mui-bar-nav">
 			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
-			<a class="mui-icon mui-icon-search mui-pull-right" href="#"></a>
+			<a class="mui-icon mui-icon-search mui-pull-right" id="openPopover" href="#popover"></a>
 			<h4 class="mui-text-center">网络课堂</h4>
 		</nav>
 		<div class="advertisement" style="margin-top: 45px">
@@ -78,7 +78,7 @@
 		</div>
 		<div style="height:50px;">
 		</div>
-		<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px;z-index: 15000">
+		<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px;">
 			<a class="mui-tab-item" href="#">
 				<img src="image/photo.png" style="width: 30%"></br>
 				<span class="mui-tab-label" style="font-size: 10px">拍题</span>
@@ -97,9 +97,35 @@
 			</a>
 		</nav>
 
-
+		<div id="popover" class="mui-popover">
+			<ul class="mui-table-view" >
+				<li class="mui-table-view-cell"> <input type="search" value="search"></li>
+			</ul>
+		</div>
 	</body>
-
+	<style>
+		.mui-card,.mui-row mui-card,.advertisement,.mui-tab-item{
+			z-index: 0;
+		}
+		.mui-popover-arrow {
+			display: none;
+		}
+		
+		#popover {
+			height: 45px;
+			width: 100%;
+			position: fixed;
+			left: 50%;
+			top: 5px;
+			right: 6px;
+		}
+		.mui-table-view-cell{
+			padding: 5px  5px  5px  10px;
+		}
+		.mui-table-view{
+			height: 45px;
+		}
+	</style>
 	<script type="text/javascript">
 		//滚动插件
 		(function($) {
