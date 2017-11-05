@@ -1,53 +1,102 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <script src="js/mui.js"></script>
-    <link href="css/mui.css" rel="stylesheet" />
-    <link rel='stylesheet prefetch' href='https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.js"></script>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel='stylesheet prefetch' href='https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	</head>
 
-<body>
-<nav class="mui-bar mui-bar-nav">
-    <a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
-</nav>
+	<body>
+		<nav class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+		</nav>
 
-<div style="text-align: center; ">
-    <img src="image/zaixianaoming.png"style="width:35%; padding: 45px 0 0 0;" />
-</div>
-<div class="mui-card" style="padding: 10px 0 20px 0;  box-shadow: 0 2px 1px #888888;">
-    <div class="mui-card-content">
-       <br method="get">
-           所报课程:<label> <input type="text" name="name"></label></br>
-        上课地点:</br>
-           姓名:<label> <input type="text" name="name"></label></br>
-           手机号:<label> <input type="text" name="name"></label></br>
-           所在学校:<label> <input type="text" name="name"></label></br>
-
-       </form>
-    </div>
-</div>
-</body>
-<style>
-    .mui-card-content{
-        margin: 0 20px 0 20px;
-    }
-    .mui-row{
-        border-bottom: solid 1px #0085d0;
-    }
-    .mui-card{
-        border-radius: 5px;
-    }
-</style>
-<script type="text/javascript" charset="utf-8">
-    mui.init({
-        swipeBack: false,
-    });
-</script>
+		<div style="text-align: center; ">
+			<img src="image/zaixianaoming.png" style="width:35%; padding: 45px 0 0 0;" />
+		</div>
+		<div class="mui-card" style="padding: 10px 0 20px 0;  box-shadow: 0 2px 1px #888888;">
+			<div class="mui-card-content" id="fir">
+				<form method="get">
+					所报课程: <input type="text" name="class" style="height: 30px;width:200px;"></label>
+					</br>
+					上课地点:
+					<select name="school" style="border: ;">
+						<option value="gy">石家庄古韵</option>
+						<option value="bc">石家庄宝翠</option>
+						<option value="sd">石家庄盛典</option>
+					</select>
+					</label>
+					</br>
+					姓名: <input type="text" name="name" style="height: 30px;margin-left: 29px;width:200px; "></label>
+					</br>
+					手机号: <input type="text" name="phone" style="height: 30px; margin-left: 15px;width:200px;"></label>
+					</br>
+					所在学校:<input type="text" name="loc" style="height: 30px;margin-left: 2px;width:200px;"></label>
+					</br>
+				</form>
+			</div>
+			<div class="mui-card-content" style="font-size: 14px; ">
+				<form>
+					选择哪一期:<input type="radio" name="time" value="spr" />春季
+					<input type="radio" name="time" value="sum" />暑期
+					<input type="radio" name="time" value="aut" />秋季
+					<input type="radio" name="time" value="win" />寒假</br>
+					选择公共课:
+					<select name="school" style="border: ;">
+						<option value="1">英语+数学</option>
+					</select>
+					</br>
+					专业课:
+					<input type="radio" name="time" value="sum" />暑期
+					<input type="radio" name="time" value="win" />寒假</br>
+				</form>
+			</div>
+			<input type="button" value="提交" class="button" style="border: #0085D0 1px solid;color: #FFFFFF; background-color: #0085D0;">
+		</div>
+	</body>
+	<style>
+		.mui-card-content {
+			margin: 0 20px 0 20px;
+		}
+		
+		#fir {
+			border-bottom: #0085D0 solid 1px;
+		}
+		
+		.mui-row {
+			border-bottom: solid 1px #0085d0;
+		}
+		
+		.mui-card {
+			border-radius: 5px;
+		}
+		
+		option {
+			height: 30px;
+		}
+		
+		select {
+			width: 200px;
+			margin: 0 0 10px 0;
+			background: #FFFFFF;
+			
+		}
+		.button{
+			margin: 5px 0 0 0;
+			position: absolute;
+			left: 40%;
+		}
+	</style>
+	<script type="text/javascript" charset="utf-8">
+		mui.init({
+			swipeBack: false,
+		});
+	</script>
 
 </html>
