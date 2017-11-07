@@ -27,7 +27,7 @@
 				<h4 class="tt">公共课常规班</h4>
             </div>
             <div class="mui-col-xs-6 ">
-                <button class="mui-pull-right">在线报名</button>
+                <button class="mui-pull-right" onclick="openpage()">在线报名</button>
             </div>
 			</div>
       <h5>教学模式：系统讲解+梳理知识+强化练习</h5>
@@ -94,6 +94,10 @@
     mui.init({
         swipeBack: false,
     });
+  		function openpage() {
+				window.location.replace("enroll-2.html");
+			}
+
 </script>
 
 </html>

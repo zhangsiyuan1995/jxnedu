@@ -78,10 +78,10 @@
 				<!-- 主页面容器 -->
 
 				<!-- 主页面标题 -->
-				<header class="mui-bar mui-bar-nav">
-					<img class="logo" src="image/jxnLOGO.png" style="width: 50%;padding-top: 6px;" />
+				<nav class="mui-bar mui-bar-nav">
+					<img class="logo" src="image/jxnLOGO.png" style="width:45%;padding-top:1px;margin-left: -10px;" />
 					<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-right" id="show"></a>
-				</header>
+				</nav>
 				<div class="mui-content mui-scroll-wrapper" id="refreshContainer">
 					<div class="mui-scroll">
 
@@ -325,7 +325,7 @@
 
 								</div>
 							</div>
-							<div id="PersonInfo" class="mui-row mui-card">
+							<div class="mui-row mui-card">
 								<div class="mui-col-xs-3">
 									<img src="image/person.jpg" alt="头像" style="height: 85px;">
 								</div>
@@ -334,7 +334,7 @@
 									<div style="font-size: 12px;color: #929292">如果你无法简洁的表达你的想法，那只说明你还不够了解它。 -- 阿尔伯特·爱因斯坦</div>
 								</div>
 							</div>
-							<div id="PersonInfo" class="mui-row mui-card">
+							<div  class="mui-row mui-card">
 								<div class="mui-col-xs-3">
 									<img src="image/person.jpg" alt="头像" style="height:85px;">
 								</div>
@@ -357,26 +357,34 @@
 			</div>
 		</div>
 
-		<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px">
-			<a class="mui-tab-item" href="#">
+		<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px" id="b">
+			<a class="mui-tab-item" href="photo.html">
 				<img src="image/photo.png" style="width: 30%"></br>
 				<span class="mui-tab-label" style="font-size: 10px">拍题</span>
 			</a>
 			<a class="mui-tab-item" href="#">
 				<img src="image/class.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">网络课堂</span>
+				<span class="mui-tab-label" style="font-size: 10px">网络课堂</span>
 			</a>
 			<a class="mui-tab-item" href="#">
 				<img src="image/fuxi.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">复习规划</span>
+				<span class="mui-tab-label" style="font-size: 10px">复习规划</span>
 			</a>
 			<a class="mui-tab-item" href="#">
 				<img src="image/buy.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">选课中心</span>
+				<span class="mui-tab-label" style="font-size: 10px">选课中心</span>
 			</a>
 		</nav>
 
 	</body>
+	<style>
+		.mui-slider{
+			height:30%;
+		}
+		header{
+			height: 10%;
+		}
+	</style>
 
 	<script type="text/javascript">
 		//滚动插件
@@ -441,6 +449,9 @@
 			document.location.href = this.href;
 		});
 		mui('.mui-table-view').on('tap', '.off', function() {
+			document.location.href = this.href;
+		})
+		mui('#b').on('tap','a', function() {
 			document.location.href = this.href;
 		})
 	</script>

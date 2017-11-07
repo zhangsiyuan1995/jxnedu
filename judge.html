@@ -14,7 +14,7 @@
 
 	<body>
 		<nav class="mui-bar mui-bar-nav">
-			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="class-details.html"></a>
 			<a class="mui-icon mui-icon-search mui-pull-right" id="openPopover" href="#popover"></a>
 			<h4 class="mui-text-center">教师评价</h4>
 		</nav>
@@ -98,7 +98,8 @@
 				<label><input name="4" type="radio" value="" /><h5 style="display: inline;">差</h5></label>
 			</form>
 		</div>
-
+		<div style="text-align: center;"><button style="color: #0085D0;border: 1px #0085D0 solid;" onclick="Toclass()">提交</button></div>
+               
 		<div style="height:50px;">
 		</div>
 		<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px;">
@@ -203,6 +204,9 @@
 		mui('.mui-scroll-wrapper').scroll({
 			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 		});
+		function Toclass(){
+			window.location.replace("class.html");
+		}
 	</script>
 
 </html>

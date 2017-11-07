@@ -57,7 +57,7 @@
 					<input type="radio" name="time" value="win" />寒假</br>
 				</form>
 			</div>
-			<input type="button" value="提交" class="button" style="border: #0085D0 1px solid;color: #FFFFFF; background-color: #0085D0;">
+			<input type="button" value="提交" class="button" onclick="openpage()" style="border: #0085D0 1px solid;color: #FFFFFF; background-color: #0085D0;">
 		</div>
 	</body>
 	<style>
@@ -97,6 +97,10 @@
 		mui.init({
 			swipeBack: false,
 		});
+				function openpage() {
+				window.location.replace("success.html");
+			}
+
 	</script>
 
 </html>

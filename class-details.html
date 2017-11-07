@@ -65,8 +65,8 @@
         </div>
     </div>
     <div class="bttn">
-    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">课后作业</button>
-    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">我要评分</button>
+    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="homework()">课后作业</button>
+    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="judge()">我要评分</button>
 </div>
 </div>
 <nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px;z-index: 15000">
@@ -124,6 +124,14 @@
     gallery.slider({
         interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
     });
+    		function homework() {
+				window.location.replace("homework.html");
+			}
+    				function judge() {
+				window.location.replace("judge.html");
+			}
+
+
 </script>
 
 </html>
