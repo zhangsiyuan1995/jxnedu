@@ -9,6 +9,7 @@
     <link rel='stylesheet prefetch' href='https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     <a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
 </nav>
 <div style="text-align: center;margin-top:40px;">
-       <img src="image/photoPng.png" id="question">
+       <a id="takePic"><img src="image/photoPng.png" id="question"></a>
 </div>
 <div class="bt">
 <input type="button" value="发给政治老师" style="color: #FFFFFF;background-color: #0085D0;border: none;"></br>
@@ -36,6 +37,41 @@
     mui.init({
         swipeBack: false,
     });
+   mui.plusReady(function() {
+   	document.getElementById("takePic").addEventListener('tap', function() {
+        takePhoto();
+    });
+});
+function takePhoto() {
+    // 获取设备默认的摄像头对象 
+    var cmr = plus.camera.getCamera(1);
+    var res = cmr.supportedImageResolutions[0];//支持像素
+    var fmt = cmr.supportedImageFormats[0];//支持的图片格式
+                //进行拍照
+    cmr.captureImage(function(path) {
+        //拍照成功回调函数
+        //读取拍照文件
+    plus.io.resolveLocalFileSystemURL(path, function(entry) {
+        //显示
+document.getElementById("picShow").src = entry.toLocalURL();
+    /**
+     * name : 1448346233943.jpg 
+     * localURL : file:///storage/emulated/0/Android/data/io.dcloud.HBuilder/.HBuilder/apps/HBuilder/doc/1448346233943.jpg
+     * localString : [object Object]
+     */
+    }, function(e) {
+    //读取拍照文件错误
+    outLine("读取拍照文件错误：" + e.message);
+});	
+    }, function(err) {
+            //拍照出现error
+            alert(err.message);//错误信息
+            alert(err.code);//错误编码
+        }, {
+            resolution: res,
+            format: fmt
+        });
+    }
 </script>
 <style>
 	#question{

@@ -1,165 +1,229 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
+<!DOCTYPE HTML>
+<html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<link rel="stylesheet" href="swipe/css/swiper.min.css" />
-		<link rel="stylesheet" href="swipe/css/minirefresh.css" />
-		<link rel="stylesheet" href="swipe/css/common.css" />
-        <link rel="stylesheet" href="swipe/css/mui.min.css" />
-		<style>
-			.navbar-header {
-				border-bottom: none;
-			}
-			.swiper-container {
-				position: absolute;
-				top: 25px;
-				width: 100%;
-				height: 100%;
-				word-break:break-all;
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<script type="text/javascript" src="js/common.js"></script>	
+		<script src="js/mui.js"></script>
+    <link href="css/mui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
 
-			}
-			.minirefresh-scroll{
-                 padding: 10px 10px 10px 10px;
-				border-bottom: solid 1px #efeff4;
-				height: 100%;
-			}
-			.minirefresh-wrap {
-				padding-top: -60px
-			}
-			body{
-				background-color: #efeff4;
-			}
-			.nav-control{
-				margin-bottom: -5px;
-				padding-bottom: -10px;
-				height: 30px;
-			}
-			p{
-				margin-bottom: 0;
-				color:#000000;
-			}
-			button{
-				margin:10% 10% 10% 10%;
-				width:80%;
-				height: 60px;
-				text-align: left;
-				display: inline;
-			}
-			.rubric{
-				color:#69c6ff;
-			}
-			button>h5{
-				border-right: solid 1px #efeff4;
-				width: 20px;
-				padding-right: 10px;
-				margin-right: 10px;
-			}
-			h5,p{
-				display: inline;
+var i=1,gentry=null,w=null;
+var hl=null,le=null,de=null,ie=null;
+var unv=true;
+var bUpdated=false; //用于兼容可能提前注入导致DOM未解析完更新的问题
+// H5 plus事件处理
+function plusReady(){
+	// 获取摄像头目录对象
+	plus.io.resolveLocalFileSystemURL('_doc/', function(entry){
+		entry.getDirectory('camera', {create:true}, function(dir){
+			gentry = dir;
+			updateHistory();
+		}, function(e){
+			outSet('Get directory "camera" failed: '+e.message);
+		} );
+	}, function(e){
+		outSet('Resolve "_doc/" failed: '+e.message);
+	});
+}
+if(window.plus){
+	plusReady();
+}else{
+	document.addEventListener('plusready', plusReady, false);
+}
+// 监听DOMContentLoaded事件
+document.addEventListener('DOMContentLoaded', function(){
+	// 获取DOM元素对象
+	hl=document.getElementById('history');
+	le=document.getElementById('empty');
+	de=document.getElementById('display');
+	if(ie=document.getElementById('index')){
+		ie.onchange=indexChanged;
+	}
+	// 判断是否支持video标签
+	unv=!document.createElement('video').canPlayType;
+	updateHistory();
+},false );
+function changeIndex(){
+	outSet('选择摄像头：');
+	ie.focus();
+}
+function indexChanged(){
+	de.innerText = ie.options[ie.selectedIndex].innerText;
+	i = parseInt(ie.value);
+	outLine(de.innerText);
+}
+// 拍照
+function getImage(){
+	var cmr = plus.camera.getCamera();
+	cmr.captureImage(function(p){
+		outLine('成功：'+p);
+		plus.io.resolveLocalFileSystemURL(p, function(entry){
+			createItem(entry);
+		}, function(e){
+			outLine('读取拍照文件错误：'+e.message);
+		});
+	}, function(e){
+		outLine('失败：'+e.message);
+	}, {filename:'_doc/camera/',index:1});
+}
+// 显示文件
+function displayFile(li){
+	if(w){
+		outLine('重复点击！');
+		return;
+	}
+	if(!li || !li.entry){
+		ouSet('无效的媒体文件');
+		return;
+	}
+	var name = li.entry.name;
+	var suffix = name.substr(name.lastIndexOf('.'));
+	var url = '';
+	if(suffix=='.mov' || suffix=='.3gp' || suffix=='.mp4' || suffix=='.avi'){
+		//if(unv){plus.runtime.openFile('_doc/camera/'+name);return;}
+		url = '/plus/camera_video.html';
+	} else {
+		url = '/plus/camera_image.html';
+	}
+	w=plus.webview.create(url,url,{hardwareAccelerated:true,scrollIndicator:'none',scalable:true,bounce:'all'});
+	w.addEventListener('loaded', function(){
+		w.evalJS('loadMedia("'+li.entry.toLocalURL()+'")');
+		//w.evalJS('loadMedia("'+'http://localhost:13131/_doc/camera/'+name+'")');
+	}, false );
+	w.addEventListener('close', function(){
+		w = null;
+	}, false);
+	w.show('pop-in');
+}
 
-			}
+// 添加播放项
+function createItem(entry){
+	var li = document.createElement('li');
+	li.className = 'ditem';
+	li.innerHTML = '<span class="iplay"><font class="aname"></font><br/><font class="ainf"></font></span>';
+	li.setAttribute('onclick', 'displayFile(this)' );
+	hl.insertBefore( li, le.nextSibling );
+	li.querySelector('.aname').innerText = entry.name;
+	li.querySelector('.ainf').innerText = '...';
+	li.entry = entry;
+	updateInformation(li);
+	// 设置空项不可见
+	le.style.display = 'none';
+}
+// 获取录音文件信息
+function updateInformation(li){
+	if(!li || !li.entry){
+		return;
+	}
+	var entry = li.entry;
+	entry.getMetadata(function(metadata){
+		li.querySelector('.ainf').innerText = dateToStr(metadata.modificationTime);
+	}, function(e){
+		outLine('获取文件"'+entry.name+'"信息失败：'+e.message);
+	} );
+}
+// 获取录音历史列表
+function updateHistory(){
+	if(bUpdated||!gentry||!document.body){//兼容可能提前注入导致DOM未解析完更新的问题
+		return;
+	}
+  	var reader = gentry.createReader();
+  	reader.readEntries(function(entries){
+  		for(var i in entries){
+  			if(entries[i].isFile){
+  				createItem(entries[i]);
+  			}
+  		}
+  	}, function(e){
+  		outLine('读取录音列表失败：'+e.message);
+  	});
+  	bUpdated = true;
+}
+		</script>
+		<link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8"/>
+		<style type="text/css">
+.aname {
+	font-size: 16px;
+}
+.ainf {
+	font-size: 12px;
+}
+.iplay { 
+	display: block;
+	background: no-repeat right center url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABYCAYAAAADWlKCAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAKwwAACsMBNCkkqwAAABZ0RVh0Q3JlYXRpb24gVGltZQAwOS8xMi8xM5w+I3MAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAAD9UlEQVR4nO2b3XETMRRGDwzvoYOkg5hRAVkqiKmAdIA7wHSQVECoALsC1gXciV0BTge4gvCwgnHk9d/+WF8m97ztxrlXs8fS1Urym6enJxwd3uZugPMcFyKGCxHDhYjhQsRwIWK4EDFciBguRAwXIoYLEcOFiOFCxHAhYrgQMVyIGC5EDBcihgsRw4WI4ULEcCFiuBAx3uVuwDGY2XtgCBTAALjc8tEFMAdKYBJC+HOK9nXBm5dwUM7MCmAEXDcMMQVuQwhlV23qC2khZjYAboGrjkLOgFEIYd5RvM6RrSFmdgs80J0MYqyHGFsSuR4S60TJ9vrwCEziZ+YhhGXy/xdU9aWgqjfnW+IsgEKtvkgJiUPUPfUyZsD42DoQ68+Y+p62AG6UhjAZITt6xopq3L9vGf+Gqh6dJX+S6ilKNaRkU8YCGLSVARBjDGLMdS5jbgkkhMQiWyejSGtEG2KsghopKoU++5AV68ZDcrvXYWTH8Pghdz1R6CHpN3MFDPsc02PsYcy1qy0nJ6uQOANKZz+jfcOUmd3H6W1jYo5RcvsqtikbuXtI+kBmBxbwz8DczMZtksdcsz1tOinZhMRxPF2bGh8R4gz4amZLMxu2aEqa8zq2LQs5e0j6EB8bLv6dAz/NrGwyjMWcj3vadjJyCimS60nLeFfAbzO7bfANT3MXLdvSmJxCBsl12VHcL8AyvpkfSpo7bdvJyCkkfQfocv5/Bnw3s/mBs6Y097aFzd7JPcv6T5dv5GtcAr/2TZN7yt0IGSE908k0+RS8FiEvhhd1yKEFUw5YAVBApoe0XQrZwgL4GEIY7pLRU+5G5OwhC57PZgbAsqPYK6rdxUMXC9Npbro8fzJy9pB0qll0FPcOuDhCRl3ubEvwOYWUyXXb5YoZ1X7GqMHSfZq7bNmWxuQUki5XnDdc+n4EPoUQiiabSzFnejKl7TJOY7IJid/iaXJ7fESIFfCNas+9zQNMc05zHnjIPctKx/mrA9egflCJGLd5eDFXukGWdddQYU+95PlDWVE97GXPeS+oivf6saBZCKHoM+8+cvcQ2NyhOwMmfW4SxdgTNs9oZd0tBAEhsRDfJbcvgbIPKTtOnNzlPnECAkPWP8xsTv3ZrJ1v2UfmuKDqGRt5QgjZ9kDWyd5D1iioP1U4P3KzqZYYY5v0om38rpDpIeCHrUFMCPjPEeSE/COetf3SU/i7EEL2GVUdSjXkGfGBfWDzIFsb/q93dRizU2R7yDr+o09R/GfRzsmRrSGvFRcihgsRw4WI4ULEcCFiuBAxXIgYLkQMFyKGCxHDhYjhQsRwIWK4EDFciBguRAwXIoYLEcOFiOFCxHAhYrgQMf4CVuqCm+17t3sAAAAASUVORK5CYII=);
+	background-size: 50px 44px;
+	-ms-touch-action: auto;
+} 
 		</style>
 	</head>
-
 	<body>
-		<nav class="mui-bar mui-bar-nav">
-			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
-			<a class="mui-icon mui-icon-loop mui-pull-right"></a>
-		</nav>
-		<div class="content">
-			<div class="nav-control">
-				<p class="active" list-type="0">1</p>
-				<p list-type="1">2</p>
-				<p list-type="2">3</p>
-				<p list-type="3">4</p>
+	<nav class="mui-bar mui-bar-nav">
+    <a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+</nav>
+<div style="text-align: center;margin-top:40px;">
+       <a id="takePic"><img src="image/photoPng.png" id="question" onclick="getImage()"></a>
+</div>
+<div class="bt">
+<input type="button" value="发给政治老师" style="color: #FFFFFF;background-color: #0085D0;border: none;"></br>
+<input type="button" value="发给英语老师" style="color: #FFFFFF;background-color: #0085D0;border: none;"></br>
+<input type="button" value="发给数学老师" style="color: #FFFFFF;background-color: #0085D0;border: none;">
+</div>
+<div class="H6">
+				<h6>不会的题拍下来</h6>
+				<h6>老师为你解答</h6>
 			</div>
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div id="minirefresh0" class="minirefresh-wrap">
-							<div class="minirefresh-scroll">
-								<h5 class="rubric">题目:</h5></br>
-								<p>第一题：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-								<a href="#minirefresh1"><button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">A</h5><P>答案答案答案</P></button></a>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">B</h5><P>答案答案答案</P></button>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">C</h5><P>答案答案答案</P></button>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">D</h5><P>答案答案答案</P></button>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div id="minirefresh1" class="minirefresh-wrap">
-							<div class="minirefresh-scroll">
-								<h5 class="rubric">题目:</h5></br>
-								<p>第一题：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">A</h5><P>答案答案答案</P></button>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">B</h5><P>答案答案答案</P></button>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">C</h5><P>答案答案答案</P></button>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">D</h5><P>答案答案答案</P></button>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="minirefresh-wrap">
-							<div class="minirefresh-scroll">
-								<h5 class="rubric">题目:</h5></br>
-								<p>第一题：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">A</h5><P>答案答案答案</P></button>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">B</h5><P>答案答案答案</P></button>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">C</h5><P>答案答案答案</P></button>
-								<button style="text-align: left;" type="button" class="mui-btn mui-btn-outlined"><h5 style="color:#69c6ff;">D</h5><P>答案答案答案</P>/button>
-							</div>
-						</div>
-					</div>
-
-					<div class="swiper-slide">
-						<div class="minirefresh-wrap">
-							<div class="minirefresh-scroll">
-
-								<button style="text-align: center;" type="button" class="mui-btn mui-btn-outlined" onclick="openpage()"><h4 style="color:#0085d0; color: #000000">提交试卷</h4></button>
-
-							</div>
-						</div>	<div style="height: 100px">
-
-					</div>
-					</div>
-				</div>
-
-			</div>
-
-
-		</div>
-
-		<script type="text/javascript" src="swipe/js/swiper.min.js"></script>
-		<script type="text/javascript" src="swipe/js/minirefresh.js"></script>
-		<script type="text/javascript" src="swipe/js/common.js"></script>
-		<script>
-			var appendTestData = Common.appendTestData,
-				bindEvent = Common.bindEvent,
-				// 记录一个最新
-				maxDataSize = 30,
-				listDomArr = [],
-				requestDelayTime = 600,
-				miniRefreshArr = [],
-				currIndex = 0;
-
-			var navControl = document.querySelector('.nav-control');
-
-			var mySwiper = new Swiper('.swiper-container', {
-				autoplay: 0,
-				onSlideChangeEnd: function(swiper) {
-					var index = swiper.activeIndex;
-					navControl.querySelector('.active').classList.remove('active');
-					navControl.children[index].classList.add('active');
-					currIndex = index;
-				}
-			});
-            function openpage(){
-                window.location.replace("result.html");}
-		</script>
+<nav class="mui-bar mui-bar-tab">
+ <button><img src="image/blue-t.png" class="png" />提交问题</button>
+ <button><img src="image/blue-again.png" class="png" />再拍一题</button>
+</nav>
 	</body>
+	<style>
+	#question{
+		width: 80%;
+	}
+    body {
+        position: relative;
+    }   
+    img {
+        width: 100%;
+        height: 30%;
+    }
+    input{
+    	margin: 10px 0 10px 0;
+    	border-radius: none;
+    	
+    }
+    .bt{
+    	text-align: center;
+    }
+    button{
+    	width: 45%;
+    	height: 100%;
+    	margin:5px 6px 5px 6px;
+    	border: none;
+    	color: #0085D0;
+    	border: 1px solid;
+    }
+    nav{
+    	text-align: center;
+    	background-color: #FFFFFF;
+    }
+    .png{
+    	margin: 0px 5px 0px 0;
+    	width:15%;height:5%;
+    }
+    .H6 {
+			text-align: center;
+			position: absolute;
+			top: 450px;
+			right: 40%;
+		}
+</style>
 
+	<script type="text/javascript" src="js/immersed.js" ></script>
 </html>
