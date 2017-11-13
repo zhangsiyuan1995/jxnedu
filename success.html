@@ -30,22 +30,10 @@
 			<div class="time">
 			<p style="display: inline;">报名时间：</p><h5 style="display: inline;">2017-10-17</h5></div>
 		</div>
+		<div style="height: 50px;"></div>
 	</body>
-			<nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item" href="#">
-				<span class="mui-tab-label mui-button">拍题</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<span class="mui-tab-label">网络课堂</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<span class="mui-tab-label">复习规划</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<span class="mui-tab-label">考后</span>
-			</a>
-		</nav>
-
+<div id="footer">
+		</div>
 	<style>
 		.content-back{
 			margin-top: 40px;
@@ -84,6 +72,9 @@
 		mui.init({
 			swipeBack: false,
 		});
-
+ $("#footer").load("foot.html");
+ mui('#footer').on('tap','a', function() {
+			document.location.href = this.href;
+		})
 		</script>
 </html>

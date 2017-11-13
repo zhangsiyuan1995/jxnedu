@@ -43,7 +43,7 @@
     });
 });
 function takePhoto() {
-    // 获取设备默认的摄像头对象 
+    // 获取设备默认的摄像头对象
     var cmr = plus.camera.getCamera(1);
     var res = cmr.supportedImageResolutions[0];//支持像素
     var fmt = cmr.supportedImageFormats[0];//支持的图片格式
@@ -62,7 +62,7 @@ document.getElementById("picShow").src = entry.toLocalURL();
     }, function(e) {
     //读取拍照文件错误
     outLine("读取拍照文件错误：" + e.message);
-});	
+});
     }, function(err) {
             //拍照出现error
             alert(err.message);//错误信息

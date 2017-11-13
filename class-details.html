@@ -18,7 +18,7 @@
 
 </nav>
 
-<div class="mui-card" style="padding: 10px 0 10px 0;  box-shadow: 0px 1px 1px #888888; margin-top: 80px">
+<div class="mui-card" style="padding: 0 0 10px 0;  box-shadow: 0px 1px 1px #888888; margin-top: 60px">
     <div class="mui-row" style="width:375px">
         <div class="mui-col-xs-1">
             <img src="image/bt1.png"  style="margin-right:4px;margin-left: 19px;width:3px;height: 25px; padding-top: 12px;">
@@ -27,7 +27,7 @@
             <h4 class="bulue mui-pull-left" >18暑假计算机二班</h4>
         </div>
         <div class="mui-xs-3">
-         <img src="image/NEW1.png" style="width:10%" id="new">
+         <img src="image/NEW1.png" style="width:15%" id="new">
         </div>
     </div>
     <div class="mui-row" style="text-align: center">
@@ -69,26 +69,12 @@
     <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="judge()">我要评分</button>
 </div>
 </div>
-<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px;z-index: 15000">
-    <a class="mui-tab-item" href="#">
-        <img src="image/photo.png" style="width: 30%"></br>
-        <span class="mui-tab-label" style="font-size: 10px">拍题</span>
-    </a>
-    <a class="mui-tab-item" href="#">
-        <img src="image/class.png" style="width: 30%"></br>
-        <span class="mui-tab-label" style="font-size: 8px">网络课堂</span>
-    </a>
-    <a class="mui-tab-item" href="#">
-        <img src="image/fuxi.png" style="width: 30%"></br>
-        <span class="mui-tab-label" style="font-size: 8px">复习规划</span>
-    </a>
-    <a class="mui-tab-item" href="#">
-        <img src="image/buy.png" style="width: 30%"></br>
-        <span class="mui-tab-label" style="font-size: 8px">选课中心</span>
-    </a>
-</nav>
+<div id="footer">
+		</div>
 
-</body>
+</body><div id="footer">
+		</div>
+
 <style>
     .bttn{
         margin-top: 20px;
@@ -96,8 +82,7 @@
     }
     #new{
         position:absolute;
-        right: 16px;
-        top: -10px;
+        right:0%;
     }
     .mui-card-content{
         margin: 0 20px 0 20px;
@@ -107,11 +92,12 @@
         margin-top: 5px;
         margin-left: 10px;
     }
-    .mui-row{
-        position:relative;
-    }
+
     .content{
         padding: 0px 15px 0 15px;
+    }
+    .mui-card{
+    	z-index: 0;
     }
 </style>
 
@@ -130,7 +116,10 @@
     				function judge() {
 				window.location.replace("judge.html");
 			}
-
+ $("#footer").load("foot.html");
+ mui('#footer').on('tap','a', function() {
+			document.location.href = this.href;
+		})
 
 </script>
 

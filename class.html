@@ -15,10 +15,10 @@
 	<body>
 		<nav class="mui-bar mui-bar-nav">
 			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
-
+<h4 style="text-align: center;">我的课程</h4>
 		</nav>
 		<div class="advertisement" style="margin-top: 45px;">
-			<img src="image/ad2.jpg">
+			<img src="image/ad2.jpg" width="100%">
 		</div>
 
 		<div class="mui-card" style="padding: 10px 0 10px 0;  box-shadow: 0px 1px 1px #888888;">
@@ -154,30 +154,14 @@
 				</div>
 			</div>
 		</div>
-		<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px;z-index: 15000">
-			<a class="mui-tab-item" href="#">
-				<img src="image/photo.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 10px">拍题</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<img src="image/class.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">网络课堂</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<img src="image/fuxi.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">复习规划</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<img src="image/buy.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">选课中心</span>
-			</a>
-		</nav>
-
+		<div style="height:50px;"></div>
+<div id="footer">
+		</div>
 	</body>
 	<style>
     a{ 
 text-decoration:none; 
-color:#0085D0; 
+color:#007aff; 
 } 
 		button {
 			position: absolute;
@@ -192,13 +176,13 @@ color:#0085D0;
 		}
 		
 		.active {
-			border: 1px solid #0085d0;
+			border: 1px solid #007aff;
 			border-radius: 20px;
 			margin: 5px 5px 5px 5px;
 			width: 63px;
 			height: 25px;
 			display: inline-block;
-			color: #0085d0;
+			color: #007aff;
 		}
 		
 		.unactive {
@@ -219,9 +203,16 @@ color:#0085D0;
 			position: relative;
 		}
 		.mui-card{
-			margin-top: 15px;
+			margin-top: 15px; accelerator: .;
+			z-index: 0;
 		}
+		
 	</style>
 
-
+<script>
+	 $("#footer").load("foot.html");
+	 mui('#footer').on('tap','a', function() {
+			document.location.href = this.href;
+		})
+</script>
 </html>

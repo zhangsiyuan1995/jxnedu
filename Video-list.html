@@ -25,9 +25,9 @@
 		<div class="mui-row mui-card" style="padding: 10px 0 10px 0;">
 
 			<div class="mui-col-xs-5">
-				<img src="image/v1.jpg" alt="课程图片" style="height: 85px;">
+				<img src="image/v1.jpg" alt="课程图片" style="width: 100%;">
 			</div>
-			<div class="mui-col-xs-7 mui-row" style="padding-left: 15px;">
+			<div class="mui-col-xs-7 mui-row" style="padding-left:15px;">
 				<h5><span class="mui-badge mui-badge-danger">最新</span><a href="Video.html">佳鑫诺网络课堂第八期 </a></h5>
 				<div style="font-size: 12px;color: #929292">数学，主要讲英语讲法，新闻内容等等。</div>
 			</div>
@@ -76,26 +76,10 @@
 				</div>
 			</div>
 		</div>
-		<div style="height:50px;">
+		<div style="height:40px;">
 		</div>
-		<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px;">
-			<a class="mui-tab-item" href="#">
-				<img src="image/photo.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 10px">拍题</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<img src="image/class.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">网络课堂</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<img src="image/fuxi.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">复习规划</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<img src="image/buy.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">选课中心</span>
-			</a>
-		</nav>
+<div id="footer">
+		</div>
 
 		<div id="popover" class="mui-popover">
 			<ul class="mui-table-view" >
@@ -185,6 +169,10 @@
 		gallery.slider({
 			interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
 		});
+		 $("#footer").load("foot.html");
+		 mui('#footer').on('tap','a', function() {
+			document.location.href = this.href;
+		})
 	</script>
 
 </html>

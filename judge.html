@@ -34,7 +34,7 @@
 		</div>
 		<div class="mui-card">
 			<div class="project">
-				<h4 class="tt">工作态度（30分）</h4>
+				<h4 class="tt">工作态度(30分)</h4>
 			</div>
 			<form action="" method="get">
 				<h5>1.按时上课，无早退，五缺课情况</h4>
@@ -67,7 +67,7 @@
 		</div>
 		<div class="mui-card">
 			<div class="project">
-				<h4 class="tt">工作态度（30分）</h4>
+				<h4 class="tt">工作态度(30分)</h4>
 			</div>
 			<form action="" method="get">
 				<h5>1.按时上课，无早退，五缺课情况</h4>
@@ -98,28 +98,12 @@
 				<label><input name="4" type="radio" value="" /><h5 style="display: inline;">差</h5></label>
 			</form>
 		</div>
-		<div style="text-align: center;"><button style="color: #0085D0;border: 1px #0085D0 solid;" onclick="Toclass()">提交</button></div>
+		<div style="text-align: center;"><button style="color: #007aff;border: 1px #007aff solid;" onclick="Toclass()">提交</button></div>
                
 		<div style="height:50px;">
 		</div>
-		<nav class="mui-bar mui-bar-tab" style="background-color:white;margin-bottom: -5px;">
-			<a class="mui-tab-item" href="#">
-				<img src="image/photo.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 10px">拍题</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<img src="image/class.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">网络课堂</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<img src="image/fuxi.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">复习规划</span>
-			</a>
-			<a class="mui-tab-item" href="#">
-				<img src="image/buy.png" style="width: 30%"></br>
-				<span class="mui-tab-label" style="font-size: 8px">选课中心</span>
-			</a>
-		</nav>
+<div id="footer">
+		</div>
 
 		<div id="popover" class="mui-popover">
 			<ul class="mui-table-view">
@@ -177,7 +161,7 @@
 			padding-left: 20px;
 		}
 		.project{			
-			border-bottom: 1px #0085D0 solid;
+			border-bottom: 1px #007aff solid;
 			margin: 0 10px 0 10px;
 			
 		}
@@ -185,9 +169,8 @@
 			padding: 1px 0 1px 0;
 			width: 45%;
 			color: #FFFFFF;
-			background-color: #0085D0;
+			background-color: #007aff;
 			text-align: center;
-			border-radius: 5px;
 			margin-bottom: 0;
 		}
 		.mui-card{
@@ -207,6 +190,10 @@
 		function Toclass(){
 			window.location.replace("class.html");
 		}
+		 $("#footer").load("foot.html");
+		 mui('#footer').on('tap','a', function() {
+			document.location.href = this.href;
+		})
 	</script>
 
 </html>
