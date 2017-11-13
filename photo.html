@@ -17,7 +17,7 @@
     <a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
 </nav>
 <div style="text-align: center;margin-top:40px;">
-       <a id="takePic"><img src="image/photoPng.png" id="question"></a>
+       <a class="takePic"><img src="image/photoPng.png" id="question"></a>
 </div>
 <div class="bt">
 <input type="button" value="发给政治老师" style="color: #FFFFFF;background-color: #0085D0;border: none;"></br>
@@ -30,7 +30,7 @@
 			</div>
 <nav class="mui-bar mui-bar-tab">
  <button><img src="image/blue-t.png" class="png" />提交问题</button>
- <button><img src="image/blue-again.png" class="png" />再拍一题</button>
+ <button class="takePic"><img src="image/blue-again.png" class="png" />再拍一题</button>
 </nav>
 </body>
 <script type="text/javascript" charset="utf-8">
@@ -38,7 +38,7 @@
         swipeBack: false,
     });
    mui.plusReady(function() {
-   	document.getElementById("takePic").addEventListener('tap', function() {
+   	document.getElementsByClassName("takePic").addEventListener('tap', function() {
         takePhoto();
     });
 });

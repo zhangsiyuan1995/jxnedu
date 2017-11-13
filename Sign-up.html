@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/mui.js"></script>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+	</head>
+
+	<body>
+		<nav class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+			<h4>注册</h4>
+		</nav>
+
+		<form style="margin-top:16%;">
+			<input style="height:50px;border: none;border-radius: 0px;margin-bottom:1px;" type="text" name="PhoneNamber" placeholder="请输入手机号">
+			<input id="btn" type="button" style="height:32px;width:120px;" value="获取验证码" onclick="sendCode(this)" />
+			<input style="height:50px;border: none;border-radius: 0px;" type="text" name="CAPTCHA" placeholder="请输入手机验证码">
+		</form>
+		<div style="text-align: center;">
+			<input id="next" type="button" style="width:80%;" value="下一步">
+		</div>
+		<div style="text-align: center; margin-top: 10px;">
+			<input type="checkbox" name="agreement" id="ag" style="display: inline;">
+			<p style="display: inline;">我已阅读并同意</p>
+			<a style="display: inline; font-size: 14px;color: #007AFF;">使用条款和隐私政策</a>
+		</div>
+	</body>
+	<style>
+		#btn {
+			border-radius: 0px;
+			border: none;
+			background-color: #ff9900;
+			color: #FFFFFF;
+			position: absolute;
+			right: 5%;
+			top: 10%;
+		}
+		
+		h4 {
+			position: absolute;
+			left: 45%;
+			top: 10%;
+		}
+		
+		#next {
+			border: none;
+			border-radius: 0;
+			height: 40px;
+			background-color: #007AFF;
+			color: #FFFFFF;
+		}
+	</style>
+	<script type="text/javascript">
+		var clock = '';
+		var nums = 45;
+		var btn;
+
+		function sendCode(thisBtn) {
+			btn = thisBtn;
+			btn.disabled = true; //将按钮置为不可点击
+			btn.value = nums + '秒后重新获取';
+			clock = setInterval(doLoop, 1000); //一秒执行一次
+		}
+
+		function doLoop() {
+			nums--;
+			if(nums > 0) {
+				btn.value = nums + '秒后重新获取';
+			} else {
+				clearInterval(clock); //清除js定时器
+				btn.disabled = false;
+				btn.value = '获取验证码';
+				nums = 45; //重置时间
+			}
+		}
+	</script>
+
+</html>
