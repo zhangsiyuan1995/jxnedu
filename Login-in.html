@@ -13,7 +13,7 @@
 
 	<body>
 		<nav class="mui-bar mui-bar-nav">
-			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+			<a style="text-decoration:none" class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
 			<h4>登录</h4>
 		</nav>
 
@@ -29,11 +29,11 @@
 
 		</form>
 		<div style="text-align: center;">
-			<input id="login" type="button" style="width:80%;" value="登录">
+			<input id="login" type="button" style="width:80%;" value="登录" onclick="index()">
 		</div>
-		<div class="mui-row">
+		<div class="mui-row" style="margin: 20px 0 0 0;">
 			<div class="mui-col-xs-6">
-				<P>快速注册</P>
+				<a href="Sign-up.html"><P>快速注册</P></a>
 			</div>
 			<div class="mui-col-xs-6">
 				<P>忘记密码</P>
@@ -76,5 +76,10 @@
 			color: #FFFFFF;
 		}
 	</style>
+	<script>
+		function index() {
+			window.location.replace("index.html");
+		}
+	</script>
 
 </html>

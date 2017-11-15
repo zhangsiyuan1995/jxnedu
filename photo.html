@@ -14,15 +14,15 @@
 
 <body>
 <nav class="mui-bar mui-bar-nav">
-    <a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+    <a  style="text-decoration:none" class="mui-icon mui-icon-left-nav mui-pull-left" onclick="history.go(-1)"></a>
 </nav>
 <div style="text-align: center;margin-top:40px;">
        <a class="takePic"><img src="image/photoPng.png" id="question"></a>
 </div>
 <div class="bt">
-<input type="button" value="发给政治老师" style="color: #FFFFFF;background-color: #0085D0;border: none;"></br>
-<input type="button" value="发给英语老师" style="color: #FFFFFF;background-color: #0085D0;border: none;"></br>
-<input type="button" value="发给数学老师" style="color: #FFFFFF;background-color: #0085D0;border: none;">
+<input type="button" value="发给政治老师" style="color: #FFFFFF;background-color: #007AFF;border: none;"></br>
+<input type="button" value="发给英语老师" style="color: #FFFFFF;background-color: #007AFF;border: none;"></br>
+<input type="button" value="发给数学老师" style="color: #FFFFFF;background-color: #007AFF;border: none;">
 </div>
 <div class="H6">
 				<h6>不会的题拍下来</h6>
@@ -74,6 +74,7 @@ document.getElementById("picShow").src = entry.toLocalURL();
     }
 </script>
 <style>
+	
 	#question{
 		width: 80%;
 	}
@@ -114,6 +115,7 @@ document.getElementById("picShow").src = entry.toLocalURL();
 			top: 450px;
 			right: 40%;
 		}
+		
 </style>
 
 </html>

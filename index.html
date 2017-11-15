@@ -65,6 +65,11 @@
 										</a>
 									</div>
 								</li>
+								<div class="sign" style="background-color: #323232;padding-top:50%;text-align: center;">
+									<button type="button" class="mui-btn mui-btn-primary"onclick="login()" style="width: 30%;">登录</button>
+									<button type="button" class="mui-btn mui-btn-danger" onclick="sign()" style="width: 30%;">注册</button>
+								</div>
+
 							</ul>
 						</div>
 					</div>
@@ -171,7 +176,7 @@
 							<ul class="mui-table-view mui-grid-view mui-grid-9">
 								<h5 style="text-align: center; height: 10px;">学员专属</h5>
 								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-									<a href="#">
+									<a href="Login-in.html">
 										<img src="image/a3.png" style="width: 60%;">
 										<h6>预习规划</h6>
 									</a>
@@ -447,6 +452,14 @@
 			document.location.href = this.href;
 		})
 		$("#footer").load("foot.html");
+				function sign() {
+				window.location.replace("Sign-up.html");
+			}
+					function login() {
+				window.location.replace("Login-in.html");
+			}
+
+
 	</script>
 
 </html>
