@@ -106,6 +106,10 @@
 				window.location.replace("enroll-2.html");
 			}
 	$("#footer").load("foot.html");
+
+	 mui('#footer').on('tap','a', function() {
+			document.location.href = this.href;
+		})
 </script>
 
 </html>
